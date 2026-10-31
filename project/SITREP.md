@@ -19,8 +19,8 @@ manifest and in-repo marketplace, templates for every file, `docs/assumptions.md
 `docs/tailoring.md`, README, CI (three jobs), ADR-0001 (Proposed). `claude plugin
 validate .` passes with two expected warnings (no licence until Q-001; `CLAUDE.md` at the
 plugin root, which is the kit's own project instructions and is not plugin context).
-`check.py` on this `project/` reports zero errors. CI has not yet run
-on GitHub (B-003 has one open box). The scaffold was exercised end to end into a temp
+`check.py` on this `project/` reports zero errors. CI run 1 on `main` is green
+(three jobs). The scaffold was exercised end to end into a temp
 directory: fresh scaffold passes, an item flipped `ready` with an open question fails,
 `review` without owner fails, `done` without a journal row warns.
 

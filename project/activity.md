@@ -38,3 +38,4 @@ Columns:
 | 2026-10-31 15:00 | operator | lead | B-003 | 1 | done | 0 | bootstrap; CI unverified until pushed | Three jobs; first GitHub run to be checked after push (B-003 open box). |
 | 2026-10-31 15:10 | researcher | lead | B-010 | 1 | done | 0 | bootstrap | README written. |
 | 2026-10-31 15:20 | planner | lead | B-011, B-012, B-013, B-014, B-015, B-016, B-017, B-018, B-019, B-020 | 1 | done | 0 | bootstrap | Execution plan for M2 reviews, M3 dogfooding and M4 hardening. |
+| 2026-10-31 20:25 | operator | lead | B-003 | 1 | done | 0 | | CI run 1 on main green; B-003 fully done. |
