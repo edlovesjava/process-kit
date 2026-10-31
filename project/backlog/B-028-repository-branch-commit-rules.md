@@ -38,3 +38,13 @@ own commits so far are not Conventional; adopting the convention is a decision r
 applies from that date.
 Branch naming added 2026-10-31 (late) from Ed's note after merging PR #1 and #2; this edit was
 made on branch `B-028-branch-naming` as the first use of the scheme.
+
+Evidence Ed cited for the workspaces default: Augment Code, "Git worktrees for parallel AI
+agent execution" (Paula Hingel, updated 2026-06-18,
+https://www.augmentcode.com/guides/git-worktrees-parallel-ai-agent-execution). Its
+argument: each agent works in its own context with no signal when another agent's change
+invalidates its assumptions, so each agent gets its own working directory and index
+(a worktree) over one shared object store; it covers failure modes, how worktrees resolve
+file conflicts, other isolation strategies and production practices. The host was not
+reachable from the kit's sandbox; read through search extracts on 2026-10-31, to be
+spot-checked locally when B-028 is planned.
