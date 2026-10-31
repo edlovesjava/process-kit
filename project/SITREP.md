@@ -7,7 +7,7 @@ once their content is reflected in the backlog, questions or notes. A correction
 earlier entry is a dated note inside it, never a silent edit, so a wrong root cause does
 not stand unmarked.
 
-## 2026-10-31 Ed answered Q-001 to Q-005; licence and the kit's own agents landed (second session)
+## 2026-10-31 Ed answered Q-001 to Q-005; licence, agents copy, prior-art note; session closed with the branch unmerged (second session)
 
 **Why this entry.** Ed answered all five bootstrap questions in chat. This session recorded
 them (D-012 to D-016, answers in `project/questions.md`) and did the two things that followed
@@ -35,6 +35,18 @@ ADR, governance and measurement tooling. Ten proposals P1 to P10 wait for Ed; P1
 front matter) and P2 (inline clarification markers tied to the questions register) are the
 researcher's first picks. Many vendor hosts were unreachable from the sandbox; facts from them
 are marked and should be spot-checked locally.
+
+**Session closing, 2026-10-31 late.** Everything is committed and pushed on
+`claude/upbeat-hypatia-1tpqea`: five commits ahead of `main`, not merged, working tree clean,
+validator zero errors and zero warnings (23 items, 0 open questions, 20 journal rows), 31 tests
+green, noun grep clean. Another session is working on this repository at the same time. Whoever
+merges should rebase or merge this branch first and expect overlap in `project/activity.md`,
+`project/SITREP.md`, `project/backlog/INDEX.md` (regenerate, never hand-merge) and
+`README.md`. Observed and worth recording for Q-004: once `.claude/agents/` existed on the branch,
+this cloud session loaded the eight role agents, so cloud sessions on the kit now have them.
+
+**Items in review for Ed.** B-021 whitepaper (comments in the Claude doc), B-023 prior art
+(ten proposals in the note, none recorded as items yet). B-013 is still ready for Ed.
 
 **What is ready now.** B-011 and B-012, the M2 boundary reviews, unchanged; they still gate
 M3. B-018 is ready but belongs to M4. Note on this session's record: Ed's chat numbered the
