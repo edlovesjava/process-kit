@@ -1,0 +1,15 @@
+{
+  "name": "process-kit",
+  "description": "The process-kit plugin, served from its own repository.",
+  "owner": {
+    "name": "edlovesjava",
+    "url": "https://github.com/edlovesjava"
+  },
+  "plugins": [
+    {
+      "name": "process-kit",
+      "source": "./",
+      "description": "Agent-and-human delivery process: role agents, validated backlog, ADRs, questions, decisions, journal, reviews."
+    }
+  ]
+}

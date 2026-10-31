@@ -1,0 +1,12 @@
+{
+  "name": "process-kit",
+  "displayName": "Process Kit",
+  "version": "0.1.0",
+  "description": "An agent-and-human delivery process as a plugin: role agents with fixed models, a validated Markdown backlog, ADRs that beat the spec, a questions register only the human closes, an append-only decision log, an activity journal, SITREP handoffs, and architecture and process reviews at every milestone boundary.",
+  "author": {
+    "name": "edlovesjava",
+    "url": "https://github.com/edlovesjava"
+  },
+  "repository": "https://github.com/edlovesjava/process-kit",
+  "keywords": ["process", "backlog", "adr", "agents", "workflow", "tracking"]
+}
