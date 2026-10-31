@@ -27,6 +27,15 @@ and tunes it later. The name stays.
 `CLAUDE.md` at the plugin root (expected) and now about a missing icon, relevant only if the kit
 is ever submitted to the directory.
 
+**Added later this session.** B-023, prior art and comparison, is in `review`:
+`docs/research/prior-art-2026-10-31.md` compares the kit with the issue trackers (Linear,
+ClickUp, Jira, Asana, monday, Notion, GitHub, GitLab), the spec-driven frameworks (Spec Kit,
+Kiro, OpenSpec, BMAD, Task Master, CCPM, Conductor, compound-engineering, superpowers) and
+ADR, governance and measurement tooling. Ten proposals P1 to P10 wait for Ed; P1 (MADR 4.0
+front matter) and P2 (inline clarification markers tied to the questions register) are the
+researcher's first picks. Many vendor hosts were unreachable from the sandbox; facts from them
+are marked and should be spot-checked locally.
+
 **What is ready now.** B-011 and B-012, the M2 boundary reviews, unchanged; they still gate
 M3. B-018 is ready but belongs to M4. Note on this session's record: Ed's chat numbered the
 agents answer "Q-003" and the name answer "Q-004"; they were recorded under Q-004 and Q-005
