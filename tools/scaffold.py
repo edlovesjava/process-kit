@@ -33,6 +33,9 @@ KIT = Path(__file__).resolve().parents[1]
 TEMPLATES = KIT / "templates"
 AGENTS = KIT / "agents"
 CHECK = KIT / "tools" / "check.py"
+# A CLAUDE.md that already carries this heading has the process sections; it is skipped
+# instead of having the sections written beside it a second time.
+PROCESS_MARKER = "## How work flows"
 
 
 @dataclass
@@ -74,6 +77,10 @@ def scaffold(
         rel = src.relative_to(TEMPLATES).as_posix()
         content = render(src.read_text(encoding="utf-8"), name, approver, date)
         if rel == "CLAUDE.md" and (target / "CLAUDE.md").exists() and not force:
+            existing = (target / "CLAUDE.md").read_text(encoding="utf-8")
+            if PROCESS_MARKER in existing:
+                report.skipped.append(rel)  # the process sections are already there
+                continue
             rel = "project/CLAUDE-process-sections.md"
             report.notes.append(
                 "CLAUDE.md exists; the process sections were written to "

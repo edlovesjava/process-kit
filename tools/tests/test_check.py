@@ -151,6 +151,12 @@ class ScaffoldedProjectTest(unittest.TestCase):
             self.assertIn("project/CLAUDE-process-sections.md", report.written)
             self.assertTrue(any("Merge them" in n for n in report.notes))
 
+    def test_second_scaffold_run_writes_nothing(self):
+        report = scaffold.scaffold(self.p.root, "example", "Approver", agents=False, today=TODAY)
+        self.assertEqual(report.written, [], report.written)
+        self.assertIn("CLAUDE.md", report.skipped)
+        self.assertFalse((self.p.project / "CLAUDE-process-sections.md").exists())
+
     def test_scaffold_copies_agents_and_validator(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
