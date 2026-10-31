@@ -1,0 +1,58 @@
+name: ci
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validator:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Unit tests for check.py and scaffold.py (stdlib only, isolated mode)
+        run: python3 -I -m unittest discover -s tools/tests -v
+      - name: Validate the kit's own tracking and confirm INDEX.md is current
+        run: |
+          python3 -I tools/check.py
+          git diff --exit-code -- project/backlog/INDEX.md
+
+  scaffold-smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Scaffold a throwaway project and validate it
+        run: |
+          target="$(mktemp -d)"
+          python3 -I tools/scaffold.py --target "$target" --name example --approver "the approver"
+          cd "$target"
+          python3 -I project/tools/check.py
+          test -f CLAUDE.md
+          test -f .claude/agents/program-manager.md
+          test -f .github/workflows/tracking.yml
+          grep -q 'name = "example"' project/process.toml
+          ! grep -rl '{{' . --include='*.md' --include='*.toml' --include='*.yml'
+      - name: Scaffold again without --force changes nothing
+        run: |
+          target="$(mktemp -d)"
+          python3 -I tools/scaffold.py --target "$target" --name example >/dev/null
+          out="$(python3 -I tools/scaffold.py --target "$target" --name example)"
+          echo "$out" | grep -q 'written_count=0'
+
+  no-project-nouns:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: The kit names no source-project domain (invariant 1)
+        run: |
+          ! grep -rniE '\b(fhir|epic|appointment|obligation|myphr|gradle|calendar mirror)\b' \
+              agents skills templates tools docs README.md CLAUDE.md
