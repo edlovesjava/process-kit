@@ -69,3 +69,13 @@ Options and Answer, so the history stays with the question.
 - **Why it matters:** The name is the plugin namespace (`/process-kit:check`, `process-kit:reviewer`), the marketplace name and the repository. Renaming after a project adopts it changes every skill invocation.
 - **Options:** (a) Keep `process-kit`: plain, kebab-case, passes the reserved-name checks, recommended. (b) Something more specific to the agent-and-human loop (`loop-kit`, `delivery-kit`). Rename before the first adopting project either way.
 - **Answer:** Keep `process-kit` (option a): generic, but good enough for now. Decided by Ed on 2026-10-31 in the session chat; recorded as D-016.
+
+## Q-006 Which development flows does the kit offer, and does it wrap existing plugins or carry its own?
+- **Status:** open
+- **Tags:** process, plugin, scope
+- **Raised:** 2026-10-31 by planner, from the source project's M4 review and Ed's ask that flows be optional and pluggable
+- **Blocks:** B-025
+- **Why it matters:** The process says what gets reviewed and when, not how code is written between gates. The source project found it needed a development method (test first inside a task, refactor findings landed before the next milestone's code) that the agents and the validator could hold to. Ed wants that method optional and declared per project, and wants the kit to adapt or wrap Claude Code plugins that already implement a flow rather than carrying its own copy. B-024 surveys the plugins and writes the options here.
+- **Options:** to be filled by B-024. The shape expected: (a) the kit carries a minimal `tdd` flow as prose and `none` as default, wrapping nothing; (b) the kit declares a flow by plugin name and its agents call that plugin's skills, with the kit's prose as fallback; (c) both, with the wrapped plugin preferred when installed. Each with licensing and update implications.
+- **Answer:**
+
