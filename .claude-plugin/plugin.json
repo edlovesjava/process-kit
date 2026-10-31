@@ -8,5 +8,6 @@
     "url": "https://github.com/edlovesjava"
   },
   "repository": "https://github.com/edlovesjava/process-kit",
+  "license": "MIT",
   "keywords": ["process", "backlog", "adr", "agents", "workflow", "tracking"]
 }

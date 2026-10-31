@@ -86,12 +86,19 @@ fork, not a tailoring.
 Version 0.1.0, bootstrapped on 2026-10-31 in one session from the source project's process
 files. Milestones M0 (scaffold and validator), M1 (agents and skills) and M2 (templates and
 tailoring docs) are built; their boundary reviews are owed and gate M3, in which the kit is
-adopted by the source project and by one fresh project. Open for the approver: licence
-(Q-001; there is none yet), distribution (Q-002), journal rows by hand or hook (Q-003),
-the kit's own agents directory (Q-004), the name (Q-005), and ADR-0001. See
-`project/SITREP.md` for the current handoff and `project/backlog/INDEX.md` for the plan.
+adopted by the source project and by one fresh project. The five bootstrap questions were
+answered on 2026-10-31 (D-012 to D-016): MIT licence; the plugin for behaviour plus
+scaffolded copies the project owns, with an update path to build (B-018); journal rows by
+hand first, a competitive trial against hooks later; the kit's own repository carries
+`.claude/agents/`; the name stays. Open for the approver: ADR-0001 and the bootstrap
+decision rows (B-013), and the whitepaper comments (B-021). See `project/SITREP.md` for the
+current handoff and `project/backlog/INDEX.md` for the plan.
 
-Verified so far: 31 unit tests, `claude plugin validate .` (two expected warnings: no
-licence yet, and the kit's own `CLAUDE.md` at the plugin root), the kit's own `check.py`, and a
-scaffold into an empty directory followed by a full status walk-through (ready with an open
-question fails, review without owner fails, done without a journal row warns).
+Verified so far: 31 unit tests, `claude plugin validate .` (two expected warnings: the kit's
+own `CLAUDE.md` at the plugin root, and no icon, which matters only for directory submission), the kit's own `check.py`, and a scaffold into an
+empty directory followed by a full status walk-through (ready with an open question fails,
+review without owner fails, done without a journal row warns).
+
+## Licence
+
+MIT; see `LICENSE`.
