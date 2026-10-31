@@ -1,0 +1,47 @@
+# Tracking configuration for {{PROJECT_NAME}}. Read by project/tools/check.py.
+# Changing anything here is a process decision: add a row to project/decisions.md.
+# See docs/tailoring.md in process-kit for what each key controls.
+
+[project]
+name = "{{PROJECT_NAME}}"
+# The one human who closes questions, accepts ADRs, merges PRs and sets `dropped`.
+approver = "{{APPROVER}}"
+
+[backlog]
+# `ready`, `blocked`, `in-progress`, `review`, `done` and `dropped` must stay in the
+# list; check.py reasons about them. Add others (such as `idea`) freely.
+statuses = ["idea", "blocked", "ready", "in-progress", "review", "done", "dropped"]
+priorities = ["P0", "P1", "P2"]
+# Edit to match project/milestones.md. `spec` is for items that produce records, not code.
+milestones = ["spec", "M0", "M1", "M2", "later"]
+# Items not updated for this many days are warned about.
+stale_days = 14
+
+[roles]
+# role = model it runs on. Must match the `model` field of the agent definitions.
+# `inherit` means the orchestrating (lead) session's model. `human` is always known.
+researcher = "inherit"
+planner = "opus"
+project-manager = "opus"
+program-manager = "opus"
+implementer = "sonnet"
+reviewer = "opus"
+architect = "opus"
+operator = "haiku"
+
+[questions]
+statuses = ["open", "answered", "superseded"]
+
+[journal]
+# The activity journal (project/activity.md): one row per agent dispatch or human decision.
+enabled = true
+file = "activity.md"
+# Values allowed in the Model column. `lead` is the orchestrating session's model.
+models = ["lead", "opus", "sonnet", "haiku", "human"]
+# Values allowed in the Outcome column.
+outcomes = ["done", "partial", "blocked", "failed", "decided", "deferred"]
+
+[issues]
+# When true, the operator opens one GitHub issue per `ready` item and closes it on `done`.
+# The item file stays the source of truth either way.
+mirror = false
