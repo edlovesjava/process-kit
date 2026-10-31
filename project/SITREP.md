@@ -26,7 +26,12 @@ B-027, added later the same session at Ed's request: session and context managem
 part of the process (handoff skills that capture live state, session topology and a brief
 template, a context budget, journal rows per session start, handoff and spawn).
 
-**For Ed.** Prioritise or drop B-024 to B-027 (all `later`, `idea`); B-024 first if the
+B-028 and B-029, from Ed's note after the two parallel sessions collided on item ids:
+repository, branch and commit rules (workspaces, one branch per session, subagents share or
+stack when safe, Conventional Commits) and, later, multi-repository projects with one
+repository for the common state.
+
+**For Ed.** Prioritise or drop B-024 to B-029 (all `later`, `idea`); B-024 first if the
 pluggable route is wanted, since B-025 depends on it and on Q-006. Nothing else changed;
 the bootstrap entry below still describes the state of the kit.
 
