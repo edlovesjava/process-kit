@@ -7,6 +7,34 @@ once their content is reflected in the backlog, questions or notes. A correction
 earlier entry is a dated note inside it, never a silent edit, so a wrong root cause does
 not stand unmarked.
 
+## 2026-10-31 Three proposals from the source project's M4 review, one question (proposal session)
+
+**Why this entry.** The source project's lead asked the kit to carry what its M4 review
+learned: a development method the process can enforce, pluggable rather than built in.
+Added as `idea` items on branch `claude/m4-review-proposals`, no PR. Restacked on the second
+session's branch (entry below) and renumbered from B-022 to B-025 to B-024 to B-027 after that
+branch used B-022 and B-023 first.
+
+**Added.** B-024 research which Claude Code plugins already implement a development flow
+(Ed named `superpowers` and `gsd`) and how the kit declares and hands off to one; B-025
+optional per-project flows (`flow` key, TDD first, `none` default, optional `kind` in
+item front matter, two loops: test first inside a task, refactor findings land before the
+next milestone's code); B-026 a `refactor` item template with the byte-identical
+acceptance line and a tailoring note on proving no behaviour change. Q-006 asks which
+flows the kit offers and whether it wraps plugins; B-024 writes its options.
+B-027, added later the same session at Ed's request: session and context management as
+part of the process (handoff skills that capture live state, session topology and a brief
+template, a context budget, journal rows per session start, handoff and spawn).
+
+B-028 and B-029, from Ed's note after the two parallel sessions collided on item ids:
+repository, branch and commit rules (workspaces, one branch per session, subagents share or
+stack when safe, Conventional Commits) and, later, multi-repository projects with one
+repository for the common state.
+
+**For Ed.** Prioritise or drop B-024 to B-029 (all `later`, `idea`); B-024 first if the
+pluggable route is wanted, since B-025 depends on it and on Q-006. Nothing else changed;
+the bootstrap entry below still describes the state of the kit.
+
 ## 2026-10-31 Ed answered Q-001 to Q-005; licence, agents copy, prior-art note; session closed with the branch unmerged (second session)
 
 **Why this entry.** Ed answered all five bootstrap questions in chat. This session recorded
