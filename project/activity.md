@@ -50,3 +50,4 @@ Columns:
 | 2026-10-31 22:45 | planner | lead | Q-006 | 1 | done | 0 | | Raised: which flows the kit offers and whether it wraps existing plugins; B-024 fills the options. |
 | 2026-10-31 22:55 | planner | lead | B-027 | 1 | done | 0 | | Ed's proposal via the source project's lead: session and context management (handoff skills, session topology, context budget, journal rows per session event). `idea`. |
 | 2026-10-31 23:30 | planner | lead | B-028, B-029 | 1 | done | 1 | | Ed's defaults for repositories, branches and commits (workspaces, one branch per session, subagents share or stack when safe, Conventional Commits) and the later multi-repository shape, as `idea` items. |
+| 2026-10-31 23:35 | planner | lead | B-028 | 1 | done | 1 | | Ed's branch-naming scheme folded in: branches named for the item or milestone they serve (`B-NNN-slug`, `milestone-<name>`), owned by the orchestrator session. First branch under the scheme. |
