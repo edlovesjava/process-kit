@@ -30,6 +30,11 @@ first), Q-004 whether the kit's own repo carries `.claude/agents/` (recommend no
 the name (recommend keep). B-013: accept, amend or reject ADR-0001 and confirm the
 `By: researcher` decision rows D-002 to D-011.
 
+**Added 2026-10-31, end of session.** B-021 (whitepaper proposal for engineers and managers) is
+in `review`: draft at `docs/whitepaper.md`, commentable copy as a Claude doc Ed holds, three
+questions left there for Ed. Fold Ed's comments in, then decide which copy is the record.
+This session closes here; the next one is a dedicated session on this repository.
+
 **What is ready now.** B-011 architecture review and B-012 process review at the M2
 boundary (run the `arch-review` and `process-review` skills); B-013 for Ed. M3 (B-014
 adopt in the source project, B-015 fresh project loop) is blocked on those reviews, as the
