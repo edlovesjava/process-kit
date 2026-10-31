@@ -1,0 +1,38 @@
+# Tracking configuration for process-kit itself (dogfooding). Read by tools/check.py.
+# Changing anything here is a process decision: add a row to project/decisions.md.
+# See docs/tailoring.md for what each key controls.
+
+[project]
+name = "process-kit"
+# The one human who closes questions, accepts ADRs, merges PRs and sets `dropped`.
+approver = "Ed"
+
+[backlog]
+statuses = ["idea", "blocked", "ready", "in-progress", "review", "done", "dropped"]
+priorities = ["P0", "P1", "P2"]
+# Must match project/milestones.md.
+milestones = ["spec", "M0", "M1", "M2", "M3", "M4", "later"]
+stale_days = 14
+
+[roles]
+# role = model it runs on. Must match the `model` field of agents/*.md.
+researcher = "inherit"
+planner = "opus"
+project-manager = "opus"
+program-manager = "opus"
+implementer = "sonnet"
+reviewer = "opus"
+architect = "opus"
+operator = "haiku"
+
+[questions]
+statuses = ["open", "answered", "superseded"]
+
+[journal]
+enabled = true
+file = "activity.md"
+models = ["lead", "opus", "sonnet", "haiku", "human"]
+outcomes = ["done", "partial", "blocked", "failed", "decided", "deferred"]
+
+[issues]
+mirror = false
