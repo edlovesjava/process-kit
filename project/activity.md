@@ -40,3 +40,7 @@ Columns:
 | 2026-10-31 15:20 | planner | lead | B-011, B-012, B-013, B-014, B-015, B-016, B-017, B-018, B-019, B-020 | 1 | done | 0 | bootstrap | Execution plan for M2 reviews, M3 dogfooding and M4 hardening. |
 | 2026-10-31 20:25 | operator | lead | B-003 | 1 | done | 0 | | CI run 1 on main green; B-003 fully done. |
 | 2026-10-31 21:10 | researcher | lead | B-021 | 1 | partial | 1 | | Whitepaper draft written to docs/whitepaper.md and a Claude doc; awaiting Ed's comments. |
+| 2026-10-31 21:50 | human | human | Q-001, Q-002, Q-003, Q-004, Q-005, D-012, D-013, D-014, D-015, D-016 | 1 | decided | 2 | Ed's messages numbered the last two answers Q-003 and Q-004; recorded under Q-004 and Q-005 by content | MIT; plugin plus owned copies with an update path; journal by hand first, competitive design later; kit carries .claude/agents/; name stays. |
+| 2026-10-31 21:55 | implementer | lead | B-019 | 1 | done | 0 | no role agents loaded in this cloud session; lead did the role | LICENSE, plugin.json license, README line; plugin validate no longer mentions the licence (CLAUDE.md and icon warnings remain). |
+| 2026-10-31 21:58 | operator | lead | B-022 | 1 | done | 0 | as above | agents/ copied verbatim to .claude/agents/. |
+| 2026-10-31 22:00 | operator | lead | B-016, B-018 | 1 | done | 0 | | B-018 unblocked to ready with the decided scope; B-016 to idea pending the competitive design. SITREP entry written. |

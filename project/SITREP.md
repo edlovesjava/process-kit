@@ -7,7 +7,36 @@ once their content is reflected in the backlog, questions or notes. A correction
 earlier entry is a dated note inside it, never a silent edit, so a wrong root cause does
 not stand unmarked.
 
+## 2026-10-31 Ed answered Q-001 to Q-005; licence and the kit's own agents landed (second session)
+
+**Why this entry.** Ed answered all five bootstrap questions in chat. This session recorded
+them (D-012 to D-016, answers in `project/questions.md`) and did the two things that followed
+directly: `LICENSE` (MIT) with `license` in `plugin.json` (B-019 done) and `.claude/agents/`
+seeded as a verbatim copy of `agents/` (B-022 done), so a cloud session on the kit now has the
+role agents. Branch `claude/upbeat-hypatia-1tpqea`, for Ed to merge.
+
+**Decisions in one line each.** MIT. Plugin for behaviour from the in-repo marketplace, the
+scaffold copies the customisable assets, and the kit must be able to update and tune those
+copies (B-018 now `ready`, scope rewritten). Journal rows by hand for the proof of concept,
+then a competitive design of hand against hook (B-016 to `idea`, scope rewritten). The kit
+is a project run by a customised instance of its own process, so it carries its agents copy
+and tunes it later. The name stays.
+
+**Still for Ed.** B-013 (ADR-0001 and the `By: researcher` rows); B-021 whitepaper comments.
+`claude plugin validate .` no longer mentions the licence; it still warns about the kit's own
+`CLAUDE.md` at the plugin root (expected) and now about a missing icon, relevant only if the kit
+is ever submitted to the directory.
+
+**What is ready now.** B-011 and B-012, the M2 boundary reviews, unchanged; they still gate
+M3. B-018 is ready but belongs to M4. Note on this session's record: Ed's chat numbered the
+agents answer "Q-003" and the name answer "Q-004"; they were recorded under Q-004 and Q-005
+by their content.
+
 ## 2026-10-31 Kit bootstrapped: M0 to M2 built, reviews owed, five questions for Ed (bootstrap session)
+
+**Corrected 2026-10-31, second session.** Q-001 to Q-005 are answered (entry above). The
+"Do not add a LICENSE" line and the statement that cloud sessions on the kit have no role
+agents no longer apply.
 
 **Why this entry.** One session built the kit end to end from the source project's process
 files (D-002, the bootstrap exception). Everything below `project/` was written with the
