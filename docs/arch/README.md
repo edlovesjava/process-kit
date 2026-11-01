@@ -12,3 +12,4 @@ a snapshot; its proposals live on in the tracking files, so an old review is nev
 
 | Review | Covers | Outcome |
 | --- | --- | --- |
+| [review-M2-2026-11-01.md](review-M2-2026-11-01.md) | M0 to M2 as built at `main` 90b6346, first review (B-011) | 2 blocking, 6 should-fix, 5 opportunities; NFRs: no status moves, N-007 reword and N-010, N-011 proposed; records: ADR-0002 (Proposed), Q-007 to Q-009, B-030 to B-036, edits to B-014, B-015, B-018, B-020, B-028 |
