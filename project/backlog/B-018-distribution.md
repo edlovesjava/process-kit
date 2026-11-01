@@ -3,12 +3,12 @@ id: B-018
 title: Distribution path per Q-002
 milestone: M4
 priority: P1
-status: ready
+status: blocked
 role: implementer
-depends_on:
+depends_on: B-030
 questions: Q-002
 owner:
-updated: 2026-10-31
+updated: 2026-11-01
 ---
 
 ## Goal
@@ -26,3 +26,4 @@ is not decided; it would need an icon (the one remaining `claude plugin validate
 
 ## Notes
 ADR-0001 consequences name the update path as the open cost of the copy approach.
+M2 architecture review (B1): the lock file B-030 writes is this item's merge base.

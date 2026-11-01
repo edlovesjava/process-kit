@@ -79,3 +79,30 @@ Options and Answer, so the history stays with the question.
 - **Options:** to be filled by B-024. The shape expected: (a) the kit carries a minimal `tdd` flow as prose and `none` as default, wrapping nothing; (b) the kit declares a flow by plugin name and its agents call that plugin's skills, with the kit's prose as fallback; (c) both, with the wrapped plugin preferred when installed. Each with licensing and update implications.
 - **Answer:**
 
+
+## Q-007 How does a project extend its validator without forking it?
+- **Status:** open
+- **Tags:** plugin, process
+- **Raised:** 2026-11-01 by architect, in docs/arch/review-M2-2026-11-01.md S3
+- **Blocks:** B-033
+- **Why it matters:** The only way to add a check today is to edit `project/tools/check.py`, which turns the copy into a fork that no update can merge cleanly (D-013). The source project will have checks the kit lacks on its first day of adoption (B-014).
+- **Options:** (a) edit the copy, as today; forks it. (b) an optional `project/tools/check_local.py` exposing `check(root, cfg, result)`, loaded by `check.py` with `importlib` when present, never written by the scaffold; recommended, and part of ADR-0002. (c) a separate project script run in CI; two validators, two outputs.
+- **Answer:**
+
+## Q-008 How does CI cover plugin validation when `--strict` always fails on the kit's own `CLAUDE.md`?
+- **Status:** open
+- **Tags:** plugin
+- **Raised:** 2026-11-01 by architect, in docs/arch/review-M2-2026-11-01.md S2
+- **Blocks:** B-020
+- **Why it matters:** `claude plugin validate . --strict` exits 1 on the permanent warning that `CLAUDE.md` sits at the plugin root; the file is the kit's own project instructions and stays. B-020 as written would be red on main or weakened (N-005).
+- **Options:** (a) `claude plugin validate . --json`, fail on any error or on any warning other than that one, matched by its message; recommended. (b) move the plugin into a subdirectory; breaks `${CLAUDE_PLUGIN_ROOT}` paths and every path in the docs. (c) non-strict only; misses new warnings. Confirm first that the CLI validates without authentication on a CI runner.
+- **Answer:**
+
+## Q-009 Does a `superseded` question unblock `ready`?
+- **Status:** open
+- **Tags:** process
+- **Raised:** 2026-11-01 by architect, in docs/arch/review-M2-2026-11-01.md S4
+- **Blocks:** B-034
+- **Why it matters:** The backlog README says `ready` needs every linked question `answered`; `check.py` blocks only on `open`, so a `superseded` question passes. Prose and code must agree (invariant 5).
+- **Options:** (a) yes, a superseded question is closed; keep the code and state it in the template; recommended. (b) only `answered` unblocks; change the validator and add a test.
+- **Answer:**

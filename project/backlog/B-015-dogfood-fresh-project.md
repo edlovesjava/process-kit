@@ -5,10 +5,10 @@ milestone: M3
 priority: P1
 status: blocked
 role: implementer
-depends_on: B-011, B-012
+depends_on: B-011, B-012, B-030, B-032
 questions:
 owner:
-updated: 2026-10-31
+updated: 2026-11-01
 ---
 
 ## Goal

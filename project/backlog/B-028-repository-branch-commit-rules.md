@@ -28,6 +28,7 @@ WORKFLOW template, agent duties and, where a rule is checkable, a validator or C
 - [ ] Branch naming: `B-NNN-short-slug` for an item branch, `milestone-<name>` for a milestone branch owned by the orchestrator session; a session-named branch (`claude/...`) is the exception for work that has no item yet and is renamed or merged as soon as it does; the validator or CI can match a PR's branch and commits to an existing item id
 - [ ] Commit rules: Conventional Commits types and scopes the kit uses, how an item id appears in the message, `refactor:` commits behaviour-neutral (ties to B-025); the implementer and reviewer agents and the `merge-sync` skill state them
 - [ ] "Safe to share or stack" defined: disjoint files, no concurrent edits under `project/`, the base branch pushed and unmerged or merged, with examples
+- [ ] A pull-request check that fails when a new `B-`, `Q-` or `D-` id already exists on the base branch with different content (architecture review O2); keep git-aware checks in a CI script, not in `check.py`, which stays a pure file reader
 - [ ] A checkable rule where one exists (a commit-message lint in CI, or a validator warning on a branch that edits another item's file), with a test
 - [ ] `docs/assumptions.md` and `docs/tailoring.md` updated; adopting the rules in the kit's own `process.toml` or `WORKFLOW.md` gets a decision row
 
