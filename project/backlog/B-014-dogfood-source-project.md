@@ -5,7 +5,7 @@ milestone: M3
 priority: P1
 status: blocked
 role: planner
-depends_on: B-011, B-012, B-030, B-033
+depends_on: B-011, B-012, B-013, B-030, B-033
 questions:
 owner:
 updated: 2026-11-01

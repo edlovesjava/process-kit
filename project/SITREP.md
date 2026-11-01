@@ -7,6 +7,32 @@ once their content is reflected in the backlog, questions or notes. A correction
 earlier entry is a dated note inside it, never a silent edit, so a wrong root cause does
 not stand unmarked.
 
+## 2026-11-01 M2 boundary reviews written and folded; M3 waits on Ed's decisions (review session)
+
+**Why this entry.** B-011 (architecture) and B-012 (process) ran as the process requires,
+on stacked branches `B-011-arch-review-m2` and `B-012-process-review-m2` (PRs open). Both
+items are `review`; `done` follows the merge, as the process review asks.
+
+**Blocking findings.** Architecture: scaffolded copies carry no provenance and the
+documented update path does not exist (ADR-0002 Proposed, B-030, B-031 for Ed); ADR-0001
+is still Proposed while code and D-005, D-006, D-013, D-015 rest on it (B-013). Process:
+journal times are estimates, not clock readings (W1); the loop has not run since the
+bootstrap ended and D-002 never says when it ended (W2 to W4); the researcher's decision
+rows stand unconfirmed and M3 did not depend on B-013 (now it does; W5). Everything is in
+`docs/arch/review-M2-2026-11-01.md` and `docs/process/review-M2-2026-11-01.md`.
+
+**Decisions Ed must make, in order.** B-013 (ADR-0001, with Consequences updated first);
+B-031 (ADR-0002); Q-010 (adopt W1 to W8, recommended all); Q-007, Q-008, Q-009 (one sitting,
+recommendations marked); Q-011 (B-023's proposals); Q-006 stays open for B-024. Then B-030
+and B-033 unblock and M3 can start.
+
+**What is ready now.** B-032 (hook root and tests, P0) needs no decision. B-034 may start
+except for its Q-009 sentence. B-013 and B-031 are Ed's.
+
+**Conventions from here.** Branch per item (`B-NNN-slug`), stacked when one depends on the
+other. Journal rows carry the clock time from `date -u`, with `late: HH:MM` in Problem
+when written after the fact. `done` only after the merge.
+
 ## 2026-10-31 Three proposals from the source project's M4 review, one question (proposal session)
 
 **Why this entry.** The source project's lead asked the kit to carry what its M4 review
