@@ -3,12 +3,12 @@ id: B-012
 title: Process review of the kit at the M2 boundary
 milestone: M2
 priority: P0
-status: ready
+status: in-progress
 role: program-manager
 depends_on: B-001, B-002, B-003, B-004, B-005, B-006, B-007, B-008, B-009, B-010
 questions:
-owner:
-updated: 2026-10-31
+owner: program-manager (lead session)
+updated: 2026-11-01
 ---
 
 ## Goal
