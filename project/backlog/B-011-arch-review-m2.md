@@ -3,12 +3,12 @@ id: B-011
 title: Architecture review of the kit at the M2 boundary (covers M0 to M2)
 milestone: M2
 priority: P0
-status: ready
+status: in-progress
 role: architect
 depends_on: B-001, B-002, B-003, B-004, B-005, B-006, B-007, B-008, B-009, B-010
 questions:
-owner:
-updated: 2026-10-31
+owner: architect (lead session)
+updated: 2026-11-01
 ---
 
 ## Goal
