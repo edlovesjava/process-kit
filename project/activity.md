@@ -51,3 +51,11 @@ Columns:
 | 2026-10-31 22:55 | planner | lead | B-027 | 1 | done | 0 | | Ed's proposal via the source project's lead: session and context management (handoff skills, session topology, context budget, journal rows per session event). `idea`. |
 | 2026-10-31 23:30 | planner | lead | B-028, B-029 | 1 | done | 1 | | Ed's defaults for repositories, branches and commits (workspaces, one branch per session, subagents share or stack when safe, Conventional Commits) and the later multi-repository shape, as `idea` items. |
 | 2026-10-31 23:35 | planner | lead | B-028 | 1 | done | 1 | | Ed's branch-naming scheme folded in: branches named for the item or milestone they serve (`B-NNN-slug`, `milestone-<name>`), owned by the orchestrator session. First branch under the scheme. |
+
+## 2026-11-01
+
+| Date-time | Role | Model | Item | Runs | Outcome | Human turns | Problem | Resolution |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 2026-11-01 21:14 | operator | lead | B-011 | 1 | done | 1 | late: 20:58; row written after the fact | Set in-progress on branch B-011-arch-review-m2, pushed. |
+| 2026-11-01 21:14 | operator | lead | B-012 | 1 | done | 0 | late: 20:59 | Set in-progress on branch B-012-process-review-m2, stacked on B-011, pushed. |
+| 2026-11-01 21:14 | architect | opus | B-011 | 1 | done | 0 | | docs/arch/review-M2-2026-11-01.md: 2 blocking, 6 should-fix, 5 opportunities; folded as ADR-0002, Q-007 to Q-009, B-030 to B-036. Item to review; done follows the merge. |

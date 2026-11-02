@@ -6,9 +6,9 @@ priority: P2
 status: idea
 role: operator
 depends_on:
-questions:
+questions: Q-008
 owner:
-updated: 2026-10-31
+updated: 2026-11-01
 ---
 
 ## Goal
@@ -21,3 +21,6 @@ manifest, agent or skill regression fails the PR, closing NFR N-005.
 
 ## Notes
 Check whether the CLI runs validation without authentication in CI before committing to it.
+Amended 2026-11-01 from the M2 architecture review (S2): `--strict` always fails on the
+kit's own root `CLAUDE.md`; build this per Q-008 (`--json` with a one-entry allowlist is the
+recommendation), never by weakening the check.
