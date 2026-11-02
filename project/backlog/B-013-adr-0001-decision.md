@@ -8,7 +8,7 @@ role: human
 depends_on:
 questions:
 owner:
-updated: 2026-10-31
+updated: 2026-11-01
 ---
 
 ## Goal
@@ -23,3 +23,8 @@ Ed's confirmation or a superseding row.
 
 ## Notes
 Together with Q-001 to Q-005 these are the approver's inputs the kit waits on.
+
+M2 reviews, 2026-11-01: the architecture review (B2) asks that ADR-0001's Consequences be
+updated to cite D-013 and D-015 and point at ADR-0002 before acceptance (the lead edits it
+while Proposed); the process review (B3) makes B-014 and B-015 depend on this item so M3 does
+not build on unconfirmed records.
