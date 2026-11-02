@@ -3,22 +3,23 @@
 Append-only record of the work process: one row per agent dispatch or human decision.
 Newest at the bottom. One `## YYYY-MM-DD` heading per UTC day; the rows under it carry the
 full date-time so a row can be quoted on its own. `check.py` validates the headings, the
-Role, Model and Outcome columns (values from `process.toml`) and warns when a backlog item
-reaches `review` or `done` with no row naming it that day. The program manager reads this
+Role, Model and Outcome columns (values from `process.toml`), warns when a backlog item
+reaches `review` or `done` with no row naming it that day, and warns when a row other than
+the roles in `journal.decided_roles` carries `decided` (from `journal.decided_roles_from`). The program manager reads this
 file at every milestone boundary.
 
 Columns:
 
 | Column | Meaning |
 | --- | --- |
-| Date-time | `YYYY-MM-DD HH:MM` UTC when the dispatch ended or the decision was made |
+| Date-time | `YYYY-MM-DD HH:MM` UTC, read from `date -u +'%Y-%m-%d %H:%M'` when the row is written, never estimated; a row for earlier work carries `late: HH:MM` in Problem |
 | Role | the role that ran (from `process.toml`), or `human` |
 | Model | `lead` for the orchestrating session, else the model the role ran on, or `human` |
 | Item | the backlog item or question it served (`B-NNN`, `Q-NNN`, `D-NNN`, `ADR-NNNN`), or `-` |
 | Runs | how many dispatches it took to get this outcome (reruns included) |
-| Outcome | `done`, `partial`, `blocked`, `failed`, `decided`, `deferred` |
+| Outcome | `done`, `partial`, `blocked`, `failed`, `decided`, `deferred`; `decided` only on a `human` row, an agent's proposal is `done` awaiting the approver |
 | Human turns | messages from the approver needed to reach the outcome |
-| Problem | what went wrong or slowed it, `reconstructed` for backfilled rows, else empty |
+| Problem | what went wrong or slowed it; `reconstructed` for backfilled rows; `late: HH:MM` when the row is written after the work; else empty |
 | Resolution | what fixed it, or what is still owed, else empty |
 
 ## 2026-10-31
@@ -60,3 +61,14 @@ Columns:
 | 2026-11-01 21:14 | operator | lead | B-012 | 1 | done | 0 | late: 20:59 | Set in-progress on branch B-012-process-review-m2, stacked on B-011, pushed. |
 | 2026-11-01 21:14 | architect | opus | B-011 | 1 | done | 0 | | docs/arch/review-M2-2026-11-01.md: 2 blocking, 6 should-fix, 5 opportunities; folded as ADR-0002, Q-007 to Q-009, B-030 to B-036. Item to review; done follows the merge. |
 | 2026-11-01 21:32 | program-manager | opus | B-012 | 1 | done | 0 | | docs/process/review-M2-2026-11-01.md: 3 blocking, 5 should-fix, 4 opportunities; folded as Q-010, Q-011, B-037 and notes. Item to review; done follows the merge. |
+
+## 2026-11-02
+
+| Date-time | Role | Model | Item | Runs | Outcome | Human turns | Problem | Resolution |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 2026-11-02 13:05 | human | human | B-011 | 1 | decided | 1 | late: 12:42 | Ed merged PR #4 (architecture review M2) into main. |
+| 2026-11-02 13:05 | human | human | B-012 | 1 | decided | 0 | late: 12:43; PR #5 merged into the B-011 branch, not main, because GitHub did not retarget the stacked PR; PR #6 lands it | Ed merged PR #5 (process review M2). |
+| 2026-11-02 13:05 | operator | lead | B-011, B-012 | 1 | done | 0 | | Merge-sync: both items done, owners cleared, Notes name the PRs. |
+| 2026-11-02 13:05 | human | human | Q-010, D-017, D-018, D-019, D-020, D-021 | 1 | decided | 1 | | Ed: fix the process review's blockers. W1 to W5 adopted; W6 to W8 still open in Q-010. |
+| 2026-11-02 13:05 | implementer | lead | B-037 | 1 | done | 0 | no implementer agent dispatched; the lead did the role (tracking, prose and one validator check) | WORKFLOW, journal template, backlog README, journal and merge-sync skills, implementer and program-manager agents, process.toml keys, check.py warning and test. To review (PR #7). |
+

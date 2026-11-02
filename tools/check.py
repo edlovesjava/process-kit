@@ -17,7 +17,8 @@ Checks (every one from the source process, plus the activity journal):
   - items untouched for `stale_days` are reported (warning)
   - questions have a known status
   - activity journal: one `## YYYY-MM-DD` per UTC day, rows with a date-time inside
-    that day, known role and model, outcome from the fixed set, integer counts
+    that day, known role and model, outcome from the fixed set, integer counts, `decided`
+    only on the roles journal.decided_roles allows (from journal.decided_roles_from)
   - an item in `review` or `done` with no journal row naming it on its `updated` day
     is reported (warning)
 Exit status is 1 on any error, 0 otherwise. Warnings never fail the run.
@@ -53,6 +54,8 @@ class Config:
     journal_file: str
     journal_models: set[str]
     journal_outcomes: set[str]
+    journal_decided_roles: set[str] = field(default_factory=lambda: {"human"})
+    journal_decided_from: dt.date | None = None
     approver: str = "the approver"
     problems: list[str] = field(default_factory=list)
 
@@ -120,6 +123,15 @@ def load_config(path: Path) -> Config:
         problems.append(f"{path.name}: [roles] must map each role name to the model it runs on")
         roles = {}
 
+    decided_roles = set(str_list(journal, "decided_roles", "journal", ["human"]))
+    decided_from_raw = journal.get("decided_roles_from")
+    decided_from: dt.date | None = None
+    if decided_from_raw is not None:
+        try:
+            decided_from = dt.date.fromisoformat(str(decided_from_raw))
+        except ValueError:
+            problems.append(f"{path.name}: journal.decided_roles_from must be a YYYY-MM-DD date")
+
     approver = project.get("approver", "the approver")
     if not isinstance(approver, str):
         problems.append(f"{path.name}: project.approver must be a string")
@@ -138,6 +150,8 @@ def load_config(path: Path) -> Config:
         journal_outcomes=set(
             str_list(journal, "outcomes", "journal", ["done", "partial", "blocked", "failed", "decided", "deferred"])
         ),
+        journal_decided_roles=decided_roles,
+        journal_decided_from=decided_from,
         approver=approver,
         problems=problems,
     )
@@ -323,6 +337,15 @@ def check_journal(rows: list[JournalRow], cfg: Config, result: Result) -> None:
         for label, value in (("runs", r.runs), ("human turns", r.human_turns)):
             if value and not value.isdigit():
                 result.errors.append(f"{where}: {label} '{value}' is not a whole number")
+        # Only the approver decides (D-021): an agent's proposal is `done`, awaiting the approver.
+        if (
+            cfg.journal_decided_from is not None
+            and r.outcome == "decided"
+            and r.role not in cfg.journal_decided_roles
+            and r.day >= cfg.journal_decided_from
+        ):
+            allowed = ", ".join(sorted(cfg.journal_decided_roles))
+            result.warnings.append(f"{where}: 'decided' on a {r.role} row; only {allowed} rows decide, an agent's proposal is 'done'")
     # A status change to review or done should leave a trace in the journal that day.
     by_day: dict[dt.date, list[JournalRow]] = {}
     for r in rows:
