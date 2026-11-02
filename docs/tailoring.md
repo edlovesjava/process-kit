@@ -82,7 +82,9 @@ Where: `[backlog]` and `[questions]` in `process.toml`.
 
 Where: `[journal]` in `process.toml`, the top of `project/activity.md`, the `journal`
 skill. `models` must list every value a row may carry; add a model when a role moves to
-it. `outcomes` is a fixed vocabulary for counting; adding one is fine, renaming one makes
+it. `decided_roles` (default `["human"]`) names the roles whose rows may carry `decided`,
+and `decided_roles_from` the date the warning applies from; a project with two approvers
+is a fork (A1), so this is for naming the approver's role, not widening it. `outcomes` is a fixed vocabulary for counting; adding one is fine, renaming one makes
 old rows invalid. `enabled = false` turns the journal checks off; the program manager then
 reviews from SITREP and PR history alone, which is weaker.
 

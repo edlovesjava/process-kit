@@ -33,6 +33,10 @@ enabled = true
 file = "activity.md"
 models = ["lead", "opus", "sonnet", "haiku", "human"]
 outcomes = ["done", "partial", "blocked", "failed", "decided", "deferred"]
+# Only these roles may carry Outcome `decided` (the approver decides; an agent's proposal is
+# `done`). check.py warns on other rows dated on or after decided_roles_from.
+decided_roles = ["human"]
+decided_roles_from = "2026-11-02"
 
 [issues]
 mirror = false

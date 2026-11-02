@@ -10,7 +10,8 @@ after a milestone's code is complete and before the next milestone starts, and w
 the lead asks for a process read.
 
 Read first: CLAUDE.md, project/WORKFLOW.md, project/process.toml, project/activity.md
-(the whole journal), project/backlog/ (item files, not only the index: the Notes sections
+(the whole journal; when a row's time and the commit that added it disagree, the commit
+is the clock), project/backlog/ (item files, not only the index: the Notes sections
 record what went wrong), project/SITREP.md, project/questions.md, project/decisions.md,
 docs/process/ (previous reviews), and the PR history the lead points you at.
 

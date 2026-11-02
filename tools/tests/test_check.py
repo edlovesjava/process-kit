@@ -302,6 +302,17 @@ class ScaffoldedProjectTest(unittest.TestCase):
         self.assertNotIn(f"B-002: done on {DAY} has no journal row that day", result.warnings)
         self.assertNotIn(f"B-003: review on {DAY} has no journal row that day", result.warnings)
 
+    def test_decided_on_a_non_human_row_warns_from_the_configured_date(self):
+        self.p.journal(dict(role="researcher", model="lead", outcome="decided"))
+        result = self.p.run()
+        self.assertErrors(result)
+        self.assertTrue(any("'decided' on a researcher row" in w for w in result.warnings), result.warnings)
+        # A human row may decide; a row before the configured date is left as written.
+        self.p.config({f'decided_roles_from = "{TODAY}"': 'decided_roles_from = "2099-01-01"'})
+        self.assertWarnings(self.p.run())
+        self.p.config({'decided_roles_from = "2099-01-01"': 'decided_roles_from = "not-a-date"'})
+        self.assertErrors(self.p.run(), r"journal.decided_roles_from must be a YYYY-MM-DD date")
+
     def test_journal_can_be_disabled(self):
         self.p.journal(dict(role="wizard"))
         self.p.item("B-002", status="done")
