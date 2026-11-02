@@ -106,3 +106,22 @@ Options and Answer, so the history stays with the question.
 - **Why it matters:** The backlog README says `ready` needs every linked question `answered`; `check.py` blocks only on `open`, so a `superseded` question passes. Prose and code must agree (invariant 5).
 - **Options:** (a) yes, a superseded question is closed; keep the code and state it in the template; recommended. (b) only `answered` unblocks; change the validator and add a test.
 - **Answer:**
+
+## Q-010 Which of the M2 process review's WORKFLOW changes W1 to W8 are adopted?
+- **Status:** open
+- **Tags:** process
+- **Raised:** 2026-11-01 by program-manager, in docs/process/review-M2-2026-11-01.md section 5
+- **Blocks:** B-037
+- **Why it matters:** The review found the loop has not run since the bootstrap ended and the journal's times are estimates, so the M3 review would measure invented data. Each change is a sentence in `project/WORKFLOW.md` (and the template) and needs a decision row; W2 also closes D-002's open end.
+- **Options:** W1 journal Date-time read from `date -u` when the row is written, late rows say when the work happened. W2 the bootstrap exception ended at 0bd616f (2026-10-31 20:33 UTC); all later work follows the loop. W3 `review` means a PR naming the item is open, or Notes says where a non-PR review lives; `done` only in the merge-sync after the merge. W4 tracking-only PRs (`idea` items, questions, decision rows, SITREP) may batch without a reviewer; everything else one item per PR. W5 only a `human` row carries `decided`; an agent's proposal is `done`, awaiting Ed. W6 until B-028 lands, fetch and number new B-, Q- and D- ids above the highest on any remote branch. W7 step 6 adds a merge row written by the operator. W8 a row that changes an item's status names one item. Recommendation: adopt all eight; W2 as a decision row superseding D-002's open end; B-037 carries the validator and template work.
+- **Answer:**
+
+## Q-011 Which of the prior-art note's proposals P1 to P10 become backlog items?
+- **Status:** open
+- **Tags:** scope
+- **Raised:** 2026-11-01 by program-manager, in docs/process/review-M2-2026-11-01.md S5
+- **Blocks:**
+- **Why it matters:** B-023's ten proposals live only in `docs/research/prior-art-2026-10-31.md`, on no register, against the "nothing is forgotten" rule; the item has waited in `review` a day.
+- **Options:** per the note. The researcher's picks were P1 (MADR 4.0 front matter for ADRs) and P2 (inline clarification markers tied to the questions register); recommendation: items for those two, the rest recorded as `idea` or dropped by Ed in one sitting.
+- **Answer:**
+

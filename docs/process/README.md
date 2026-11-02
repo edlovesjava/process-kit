@@ -16,3 +16,4 @@ snapshot and is never edited.
 
 | Review | Covers | Outcome |
 | --- | --- | --- |
+| [review-M2-2026-11-01.md](review-M2-2026-11-01.md) | 2026-10-31 to 2026-11-01; M0 to M2 bootstrap, second and third sessions; PRs #1 to #3 (B-012) | Dispatches per item median 1 max 2; 1 rerun; 0.43 human turns per decided record; ready-to-merged and review-findings uncountable (no item passed `ready`, no reviewer ran); 4 of 5 recommendations taken. 3 blocking, 5 should-fix, 4 opportunities; records: Q-010 (W1 to W8), Q-011, B-037, edits to B-013, B-014, B-015, B-027, B-028 |

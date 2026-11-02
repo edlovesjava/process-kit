@@ -8,7 +8,7 @@ role: researcher
 depends_on:
 questions:
 owner:
-updated: 2026-10-31
+updated: 2026-11-01
 ---
 
 ## Goal
@@ -33,3 +33,8 @@ B-024 to B-026 as a process proposal. The existing `sitrep` and `session-start` 
 and A7 (push the branch first) are the starting point; the gap is the live state a
 handoff loses (subscriptions, check-ins, child sessions) and the rules for more than
 one session at a time.
+
+From the M2 process review (S2, Qa): how does a journal row say which session wrote it?
+(a) a tenth column `Branch`, which B-028's naming makes the session's id; (b) a `[branch]`
+prefix in Resolution; (c) derive it from the commit that added the row. The review
+recommends (c) now and (a) with this item, so the journal format changes once.
