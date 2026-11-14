@@ -59,3 +59,4 @@ Columns:
 | 2026-11-01 21:14 | operator | lead | B-011 | 1 | done | 1 | late: 20:58; row written after the fact | Set in-progress on branch B-011-arch-review-m2, pushed. |
 | 2026-11-01 21:14 | operator | lead | B-012 | 1 | done | 0 | late: 20:59 | Set in-progress on branch B-012-process-review-m2, stacked on B-011, pushed. |
 | 2026-11-01 21:14 | architect | opus | B-011 | 1 | done | 0 | | docs/arch/review-M2-2026-11-01.md: 2 blocking, 6 should-fix, 5 opportunities; folded as ADR-0002, Q-007 to Q-009, B-030 to B-036. Item to review; done follows the merge. |
+| 2026-11-01 21:32 | program-manager | opus | B-012 | 1 | done | 0 | | docs/process/review-M2-2026-11-01.md: 3 blocking, 5 should-fix, 4 opportunities; folded as Q-010, Q-011, B-037 and notes. Item to review; done follows the merge. |

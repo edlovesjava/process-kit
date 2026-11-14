@@ -8,7 +8,7 @@ role: researcher
 depends_on:
 questions:
 owner:
-updated: 2026-10-31
+updated: 2026-11-01
 ---
 
 ## Goal
@@ -49,3 +49,9 @@ invalidates its assumptions, so each agent gets its own working directory and in
 file conflicts, other isolation strategies and production practices. The host was not
 reachable from the kit's sandbox; read through search extracts on 2026-10-31, to be
 spot-checked locally when B-028 is planned.
+
+From the M2 process review (S1, W6): interim rule until this item lands, before minting a
+`B-`, `Q-` or `D-` id, `git fetch` and number above the highest id on any remote branch,
+then push the new file at once. For this item: a `check.py --next-id` that reads fetched
+remote refs with `git ls-tree` (standard library, offline), or the same in a CI script if
+`check.py` is to stay a pure file reader (architecture review, section 5).
