@@ -8,7 +8,7 @@ role: researcher
 depends_on:
 questions:
 owner:
-updated: 2026-11-01
+updated: 2026-11-14
 ---
 
 ## Goal
@@ -26,7 +26,7 @@ WORKFLOW template, agent duties and, where a rule is checkable, a validator or C
 ## Acceptance
 - [ ] A repository-and-branches section in `templates/project/WORKFLOW.md` (and the kit's own): workspaces by default, one branch per session, naming, when a subagent shares, stacks or branches off, who rebases what, how a stacked PR is retargeted, what happens when two sessions touch `project/` (ties to B-027's one-orchestrator rule)
 - [ ] Branch naming: `B-NNN-short-slug` for an item branch, `milestone-<name>` for a milestone branch owned by the orchestrator session; a session-named branch (`claude/...`) is the exception for work that has no item yet and is renamed or merged as soon as it does; the validator or CI can match a PR's branch and commits to an existing item id
-- [ ] Commit rules: Conventional Commits types and scopes the kit uses, how an item id appears in the message, `refactor:` commits behaviour-neutral (ties to B-025); the implementer and reviewer agents and the `merge-sync` skill state them
+- [ ] Commit rules: Conventional Commits types and scopes the kit uses, how an item id appears in the message; under a `tdd` flow (B-025) the granularity the source project adopted: a test and its fix in one commit, or a red `test:` commit immediately followed by its `fix:`/`feat:`, the only red commit allowed, and `refactor:` always its own commit changing no golden file or CLI output; the implementer and reviewer agents and the `merge-sync` skill state them
 - [ ] "Safe to share or stack" defined: disjoint files, no concurrent edits under `project/`, the base branch pushed and unmerged or merged, with examples
 - [ ] A pull-request check that fails when a new `B-`, `Q-` or `D-` id already exists on the base branch with different content (architecture review O2); keep git-aware checks in a CI script, not in `check.py`, which stays a pure file reader
 - [ ] A checkable rule where one exists (a commit-message lint in CI, or a validator warning on a branch that edits another item's file), with a test
