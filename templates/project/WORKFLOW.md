@@ -79,10 +79,10 @@ Rules of routing:
    `depends_on`, `questions`, milestone, priority. The PM runs `check.py`.
 4. **Implement.** The implementer takes one `ready` item on its own branch, follows
    `CLAUDE.md`, writes tests first where the item is pure logic, opens a PR that names
-   the item, and sets the item to `review`.
+   the item, and sets the item to `review` once the PR is open. It never sets `done`.
 5. **Review.** The reviewer checks the PR against the item's acceptance criteria. Blocking
    findings go back to the implementer; design doubts become questions.
-6. **Merge.** {{APPROVER}} merges. The operator sets the item `done`, regenerates the
+6. **Merge.** {{APPROVER}} merges. Only then, in the merge-sync, the operator sets the item `done`, regenerates the
    index, updates `milestones.md`, closes the mirrored issue if issues are on, and adds a
    journal row. This happens in the same session as the merge, never "next time".
 7. **Milestone boundary.** When a milestone's last code item reaches `review`, the
@@ -121,8 +121,17 @@ These never happen without {{APPROVER}}:
 - **Status is in the file, not in anyone's head.** Statuses are listed in
   `process.toml`. The index is generated, never hand-edited.
 - **The journal is the record of work.** Every agent dispatch and every human decision is
-  one row in `activity.md`, written the same day. `check.py` warns when an item reaches
-  `review` or `done` with no row that day.
+  one row in `activity.md`, written the same day, with the clock time read from `date -u`
+  when the row is written, never estimated; a row for earlier work says when the work
+  happened (`late: HH:MM` in Problem). Only a `human` row carries `decided`; an agent's
+  proposal is `done`, awaiting the approver. `check.py` warns when an item reaches
+  `review` or `done` with no row that day, and when a non-human row decides.
+- **Review means an open PR.** An item is `review` only while a PR naming it is open, or
+  its Notes say where a non-PR review lives (a commentable document, a research note).
+  `done` is set only in the merge-sync after the merge, never on the item's own branch.
+- **Tracking-only changes travel light.** `idea` items, questions, decision rows, journal
+  rows and SITREP entries may batch in one PR and merge without a reviewer. Everything
+  else is one item per PR with a review.
 - **GitHub issues mirror the backlog, never replace it** (when `issues.mirror` is on).
   When an item becomes `ready` the operator opens one issue titled with the item id; it
   closes on `done`. PRs reference the issue. The item file stays the source of truth.

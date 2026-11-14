@@ -9,6 +9,13 @@ not stand unmarked.
 
 ## 2026-11-01 M2 boundary reviews written and folded; M3 waits on Ed's decisions (review session)
 
+**Added 2026-11-14.** The source project adopted the development method the kit's B-025 and
+B-026 propose (its D-020: red-green-refactor with a named commit granularity, refactor items
+before the next milestone's code, ADR first for architectural refactors, no drive-bys) and
+its validator rule for `kind: refactor` is verified there. Folded into B-025, B-026 and
+B-028 as proposals on branch `B-025-development-method-adopted`, stacked on B-037. PRs #6 and
+#7 are still open and still gate everything below.
+
 **Why this entry.** B-011 (architecture) and B-012 (process) ran as the process requires,
 on stacked branches `B-011-arch-review-m2` and `B-012-process-review-m2` (PRs open). Both
 items are `review`; `done` follows the merge, as the process review asks.

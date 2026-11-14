@@ -40,6 +40,10 @@ file = "activity.md"
 models = ["lead", "opus", "sonnet", "haiku", "human"]
 # Values allowed in the Outcome column.
 outcomes = ["done", "partial", "blocked", "failed", "decided", "deferred"]
+# Only these roles may carry Outcome `decided` (the approver decides; an agent's proposal is
+# `done`). check.py warns on other rows dated on or after decided_roles_from.
+decided_roles = ["human"]
+decided_roles_from = "{{DATE}}"
 
 [issues]
 # When true, the operator opens one GitHub issue per `ready` item and closes it on `done`.

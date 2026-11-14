@@ -11,7 +11,8 @@ skill exists so it does not recur.
 1. Confirm the merge: `git fetch origin main` and `git log origin/main --oneline -5`
    shows the PR's merge commit, or the approver said so. Do not mark anything done on
    intent.
-2. In `project/backlog/$0-*.md`: `status: done`, `owner:` cleared, `updated:` today. Tick
+2. In `project/backlog/$0-*.md`: `status: done`, `owner:` cleared, `updated:` today. This is
+   the only place `done` is ever set; an item on an unmerged branch is `review`. Tick
    any acceptance box the PR evidenced but left unticked, citing the PR.
 3. `project/milestones.md`: if this was the milestone's last item, set the milestone
    `in-progress` with a note that the boundary reviews are due (it becomes `done` when
@@ -23,7 +24,9 @@ skill exists so it does not recur.
    item id, referencing the PR. Check it actually closed; a missed close was the second
    finding.
 6. Append a journal row (journal skill): role of whoever implemented, item `$0`, runs as
-   counted from the PR history, outcome `done`, human turns from the review thread.
+   counted from the PR history, outcome `done`, human turns from the review thread. The
+   approver's merge is a decision: a second row, `human | human | $0 | 1 | decided`, with
+   `merged PR #$1` in Resolution.
 7. Run `python3 -I project/tools/check.py`; it must report zero errors and no
    "has no journal row" warning for `$0`.
 8. If the milestone's last code item just merged, dispatch the architect and the

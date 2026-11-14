@@ -18,7 +18,10 @@ it the same day, right after the dispatch or decision.
    | --- | --- | --- | --- | --- | --- | --- | --- | --- |
    ```
 
-2. Append the row under that heading (never above an earlier day):
+2. Read the clock now: `date -u +'%Y-%m-%d %H:%M'`. That is the Date-time; never estimate
+   it. If the row records work that finished earlier, put `late: HH:MM` (when the work
+   happened) in Problem.
+3. Append the row under that heading (never above an earlier day):
 
    ```
    | YYYY-MM-DD HH:MM | $0 | <model> | $1 | <n> | $2 | <n> | <problem or empty> | <resolution or empty> |
@@ -33,15 +36,17 @@ it the same day, right after the dispatch or decision.
    - **Runs**: how many dispatches it took to reach this outcome, reruns included. A
      rerun is a signal, not a failure; count it honestly.
    - **Outcome**: one of `journal.outcomes`: `done`, `partial`, `blocked`, `failed`,
-     `decided` (human decisions), `deferred`.
+     `decided`, `deferred`. Only a `human` row carries `decided`; an agent that proposes
+     records `done` with "awaiting the approver" in Resolution. The validator warns
+     otherwise (`journal.decided_roles`).
    - **Human turns**: messages from the approver needed to reach the outcome.
    - **Problem**: what went wrong or slowed it; `reconstructed` when the row is written
      after the fact from item notes, SITREP or PR history; empty when nothing did.
    - **Resolution**: what fixed it, or what is still owed.
 
-3. Run `python3 -I project/tools/check.py`; a bad role, model, outcome or date-time is an
+4. Run `python3 -I project/tools/check.py`; a bad role, model, outcome or date-time is an
    error.
-4. Commit the row with the change it records when possible; otherwise on its own.
+5. Commit the row with the change it records when possible; otherwise on its own.
 
 A decision by the approver is a row too: role `human`, model `human`, outcome `decided`,
 item the question, decision or ADR it settled.

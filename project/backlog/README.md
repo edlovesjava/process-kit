@@ -36,7 +36,9 @@ Links, context, things learned while doing it.
   `answered`. `check.py` fails otherwise.
 - `blocked` must have at least one unmet dependency or open question; otherwise it is
   `ready` or `idea`.
-- `in-progress` and `review` must have an `owner`.
+- `in-progress` and `review` must have an `owner`. `review` means a PR naming the item is
+  open (or Notes says where the review lives); `done` is set only after the merge, in the
+  merge-sync, never on the item's own branch.
 - Only Ed sets `dropped`.
 - Touch `updated` on every edit, and add a journal row when the status changes.
 - An implementer takes exactly one `ready` item at a time and never edits another

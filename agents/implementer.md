@@ -13,11 +13,14 @@ criteria, write tests first for pure logic (tests run offline; network only in t
 commands that exist to touch it), keep the build warning-clean, and run the repository's
 build and tests before every push. Commit small and focused. Open a PR whose title
 starts with the item id, whose body lists the acceptance criteria as a checklist with
-each one ticked and evidenced, and set the item status to review. Run
+each one ticked and evidenced, and set the item status to review once the PR is open.
+Never set an item to done; that happens after the merge, in the merge-sync. Run
 `python3 -I project/tools/check.py` before the final push.
 
 Stop and write a Q entry (project/questions.md) instead of guessing when: a decision is
 missing, an ADR and the plan disagree, or the item would need to touch files outside
 its scope. Never edit another item's file. Never change CI or verification commands to
 make them pass. Never touch a production system or a real user account. Report the
-branch, the PR and how many build runs it took so the lead can add a journal row.
+branch, the PR and how many build runs it took so the lead can add a journal row. You
+propose and implement; you never record a decision, so your journal rows are never
+`decided`.
