@@ -72,3 +72,9 @@ Columns:
 | 2026-11-02 13:05 | human | human | Q-010, D-017, D-018, D-019, D-020, D-021 | 1 | decided | 1 | | Ed: fix the process review's blockers. W1 to W5 adopted; W6 to W8 still open in Q-010. |
 | 2026-11-02 13:05 | implementer | lead | B-037 | 1 | done | 0 | no implementer agent dispatched; the lead did the role (tracking, prose and one validator check) | WORKFLOW, journal template, backlog README, journal and merge-sync skills, implementer and program-manager agents, process.toml keys, check.py warning and test. To review (PR #7). |
 
+## 2026-11-14
+
+| Date-time | Role | Model | Item | Runs | Outcome | Human turns | Problem | Resolution |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 2026-11-14 16:33 | planner | lead | B-025, B-026, B-028 | 1 | done | 0 | input arrived from the source project's lead session; PRs #6 and #7 still unmerged, so this stacks on B-037; first commit's script stopped early, finished in a second commit | Source project adopted the development method (its D-020): task and milestone loops, commit granularity, validator rule as verified, agent duties. Folded into the three idea items as proposals; nothing decided for the kit. |
+
